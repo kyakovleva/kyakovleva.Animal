@@ -1,4 +1,4 @@
-package src.Animal.data;
+package src.data;
 
 public enum Command {
     ADD,

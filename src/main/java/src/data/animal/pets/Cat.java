@@ -1,6 +1,6 @@
-package src.Animal.pets;
+package src.data.animal.pets;
 
-import src.Animal.Animal;
+import src.data.animal.Animal;
 
 public class Cat extends Animal {
     @Override

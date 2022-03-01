@@ -1,4 +1,4 @@
-package src.Animal;
+package src.data.animal;
 
 public abstract class Animal {
     protected String name;
@@ -18,7 +18,7 @@ public abstract class Animal {
            return "года";
     }
 
-    protected void say() {
+    public void say() {
         System.out.println("Я говорю");
     }
 

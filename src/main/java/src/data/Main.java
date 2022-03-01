@@ -1,9 +1,10 @@
-package src.Animal;
+package src.data;
 
-import src.Animal.birds.Duck;
-import src.Animal.data.Command;
-import src.Animal.pets.Cat;
-import src.Animal.pets.Dog;
+import src.data.animal.Animal;
+import src.data.animal.birds.Duck;
+import src.data.Command;
+import src.data.animal.pets.Cat;
+import src.data.animal.pets.Dog;
 
 import java.util.*;
 import java.lang.String;
@@ -32,29 +33,28 @@ public class Main {
                 case ADD:
                     System.out.println("Какое животное? Cat/Dog/Duck");
 
-                    while (true){
+                    while (true) {
 
-                    String animaltype = sc.next();
-                    Animal animal = null;
-                    if (animaltype.equals("Dog")) {
-                        animal = new Dog();
-                        generateAnimal(animal, sc);
-                    } else if (animaltype.equals("Cat")) {
-                        animal = new Cat();
-                        generateAnimal(animal, sc);
-                    } else if (animaltype.equals("Duck")) {
-                        animal = new Duck();
-                        generateAnimal(animal, sc);
+                        String animaltype = sc.next();
+                        Animal animal = null;
+                        if (animaltype.equals("Dog")) {
+                            animal = new Dog();
+                            generateAnimal(animal, sc);
+                        } else if (animaltype.equals("Cat")) {
+                            animal = new Cat();
+                            generateAnimal(animal, sc);
+                        } else if (animaltype.equals("Duck")) {
+                            animal = new Duck();
+                            generateAnimal(animal, sc);
+                        } else {
+                            System.out.println(String.format("Choose correct animal"));
+                            continue;
+                        }
+                        animals.add(animal);
+                        animal.say();
+                        break;
                     }
-                    else {
-                        System.out.println(String.format("Choose correct animal"));
-                        continue;
-                    }
-                    animals.add(animal);
-                    animal.say();
                     break;
-                    }
-break;
                 case LIST:
                     for (Animal a : animals) {
                         System.out.println(a);

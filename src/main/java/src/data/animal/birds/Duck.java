@@ -1,6 +1,6 @@
-package src.Animal.birds;
+package src.data.animal.birds;
 
-import src.Animal.Animal;
+import src.data.animal.Animal;
 
 public class Duck extends Animal implements Flying {
     @Override
