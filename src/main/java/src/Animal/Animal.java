@@ -1,4 +1,4 @@
-package animalproject;
+package src.Animal;
 
 public abstract class Animal {
     protected String name;

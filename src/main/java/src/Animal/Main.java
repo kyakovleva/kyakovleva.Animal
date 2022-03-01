@@ -1,8 +1,9 @@
-package animalproject;
+package src.Animal;
 
-import animalproject.birds.Duck;
-import animalproject.pets.Cat;
-import animalproject.pets.Dog;
+import src.Animal.birds.Duck;
+import src.Animal.data.Command;
+import src.Animal.pets.Cat;
+import src.Animal.pets.Dog;
 
 import java.util.*;
 import java.lang.String;
