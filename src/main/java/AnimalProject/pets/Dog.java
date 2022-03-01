@@ -1,13 +1,15 @@
-package AnimalProject;
+package animalproject.pets;
+
+import animalproject.Animal;
 
 public class Dog extends Animal {
     @Override
-    public void Say() {
+    public void say() {
         System.out.println("ГАВ ГАВ");
     }
 
     @Override
     public String toString() {
-        return super.toString() + ". Я Пес";
+        return super.toString();
     }
 }

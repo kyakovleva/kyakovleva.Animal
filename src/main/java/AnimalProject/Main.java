@@ -1,13 +1,11 @@
-package AnimalProject;
+package animalproject;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import animalproject.birds.Duck;
+import animalproject.pets.Cat;
+import animalproject.pets.Dog;
+
+import java.util.*;
 import java.lang.String;
-
-
-import static AnimalProject.Command.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,16 +16,23 @@ public class Main {
 
         String chose;
 
-///       Command command = Command.valueOf(Command.trim().toUpperCase(Locale.ROOT).toLowerCase(Locale.ROOT));
-
         while (true) {
 
             System.out.println("Выберите команду add/list/exit");
             chose = sc.next().toUpperCase(Locale.ROOT).trim();
 
+            String finalChose = chose;
+            boolean isCommandExist = Arrays.asList(Command.values()).stream().map(command -> command.name()).toList().contains(chose);
+            if (!isCommandExist) {
+                System.out.println(String.format("Команда %s не найдена", chose));
+                continue;
+            }
             switch (Command.valueOf(chose)) {
                 case ADD:
                     System.out.println("Какое животное? Cat/Dog/Duck");
+
+                    while (true){
+
                     String animaltype = sc.next();
                     Animal animal = null;
                     if (animaltype.equals("Dog")) {
@@ -40,9 +45,15 @@ public class Main {
                         animal = new Duck();
                         generateAnimal(animal, sc);
                     }
+                    else {
+                        System.out.println(String.format("Choose correct animal"));
+                        continue;
+                    }
                     animals.add(animal);
-                    animal.Say();
+                    animal.say();
                     break;
+                    }
+break;
                 case LIST:
                     for (Animal a : animals) {
                         System.out.println(a);
@@ -51,8 +62,6 @@ public class Main {
                 case EXIT:
                     System.exit(0);
                     break;
-                default:
-                    System.out.println("Wrong enter");
 
 
             }
@@ -81,8 +90,8 @@ public class Main {
 //        dog.setColor("Черный");
 //        dog.setWeight(15);
 //
-//        duck.Say();
-//        dog.Say();
-//        cat.Say();
+//        duck.say();
+//        dog.say();
+//        cat.say();
 //        System.out.println(dog);
 

@@ -1,6 +1,6 @@
-package AnimalProject;
+package animalproject;
 
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected int age;
     protected int weight;
@@ -9,32 +9,28 @@ public class Animal {
     private String getAgeString() {
         int ageLastNumber = age % 10;
         boolean exclusion = (age % 100 >= 11) && (age % 100 <= 14);
-        String old = "";
 
         if (ageLastNumber == 1)
-            old = "год";
-        else if (ageLastNumber == 0 || ageLastNumber >= 5 && ageLastNumber <= 9)
-            old = "лет";
-        else if (ageLastNumber >= 2 && ageLastNumber <= 4)
-            old = "года";
-        if (exclusion)
-            old = "лет";
-        return old;
+           return "год";
+        else if (ageLastNumber == 0 || ageLastNumber >= 5 || exclusion)
+           return  "лет";
+        else
+           return "года";
     }
 
-    public void Say() {
+    protected void say() {
         System.out.println("Я говорю");
     }
 
-    public void Go() {
+    protected void go() {
         System.out.println("Я иду");
     }
 
-    public void Drink() {
+    protected void drink() {
         System.out.println("Я пью");
     }
 
-    public void Eat() {
+    protected void eat() {
         System.out.println("Я ем");
     }
 
