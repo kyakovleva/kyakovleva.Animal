@@ -8,6 +8,7 @@ import src.data.animal.pets.Dog;
 
 import java.util.*;
 import java.lang.String;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
