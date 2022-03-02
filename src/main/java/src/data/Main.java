@@ -24,7 +24,7 @@ public class Main {
             chose = sc.next().toUpperCase(Locale.ROOT).trim();
 
             String finalChose = chose;
-            boolean isCommandExist = Arrays.asList(Command.values()).stream().map(command -> command.name()).toList().contains(chose);
+            boolean isCommandExist = Arrays.stream(Command.values()).map(Command::name).collect(Collectors.toList()).contains(chose);
             if (!isCommandExist) {
                 System.out.println(String.format("Команда %s не найдена", chose));
                 continue;
